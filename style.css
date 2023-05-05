@@ -1,0 +1,98 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: tomato;
+}
+
+.container {
+    text-align: center;
+}
+    
+.container-garis {
+    position: relative;
+    width: 500px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.garis-depan {
+   position: absolute;
+   width: 100%;
+   border: none;
+   height: 4px; 
+   top: 50%;
+   z-index: -1;
+   background-color: silver; 
+   
+}
+
+.garis-belakang {
+   position: absolute;
+   width: 0%;
+   border: none;
+   height: 4px; 
+   top: 50%;
+   background-color: green; 
+   z-index: -1;
+   transition: .4s linear width;
+}
+
+.step {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 35px;
+    width: 35px;
+    border-radius: 50%;
+    border: 4px solid crimson;
+    background-color: white;
+    color: red;
+}
+
+.step.checked {
+    border-color: green;
+    color: green;
+    transition: all .4s linear;
+    transition-delay: 0.3s;
+}
+.step.checked small {
+    position: absolute;
+    top: 40px;
+    color: black;
+}
+
+.btn {
+    margin: 70px 15px 0;
+    padding: 10px 20px;
+    border: none;
+    background-color: blue;
+    color: wheat;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.btn:hover {
+    opacity: .8;
+}
+.btn:active {
+    transform: scale(0.97);
+}
+.btn:disabled {
+    opacity: .4;   
+}
+
+@media screen and (width < 500px) {
+    .container-garis {
+        width: 90vw;
+    }
+}
